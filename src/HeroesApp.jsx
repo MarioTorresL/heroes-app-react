@@ -1,13 +1,16 @@
-import {Outlet} from "react-router-dom"
-import {NavBar} from "./ui"
+import { Outlet } from "react-router-dom";
+import {AuthProvider} from "./auth/components/AuthProvider";
+import { NavBar } from "./ui";
 
 export const HeroesApp = () => {
   return (
     <>
-      <NavBar/>
-      <div className="container">
-      <Outlet/>
-      </div>
+      <AuthProvider>
+        <NavBar />
+        <div className="container">
+          <Outlet />
+        </div>
+      </AuthProvider>
     </>
-  )
-}
+  );
+};
