@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { DcPage, MarvelPage, SearchPage, HeroPage } from "../heroes";
 import { HeroesApp } from "../HeroesApp";
 import { LoginPage } from "../auth";
-import { NotFound } from "../ui";
+import {ErrorPage} from "../ui/components/ErrorPage";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ export const AppRouter = createBrowserRouter([
       { path: "search", element: <SearchPage /> },
       { path: "hero/:id", element: <HeroPage /> },
     ],
+    errorElement: <ErrorPage/>
   },
-  { path: "login", element: <LoginPage /> },
-  { path: "/*", element: <NotFound /> },
+  { path: "login", element: <LoginPage />, errorElement: <ErrorPage/> },
 ]);

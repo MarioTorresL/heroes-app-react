@@ -11,7 +11,6 @@ export const AuthProvider = ({ children }) => {
   const [authState, dispatch] = useReducer(authReducer, initialState);
 
   const login = (name = "") => {
-
     const action = {
       type: types.login,
       payload: {
